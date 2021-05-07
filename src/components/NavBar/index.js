@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { logout } from '../../controllers/sessionController';
+
 import './styles.css';
 
 
@@ -18,6 +20,7 @@ function Navbar(props){
                 <img src={props.brandSrc} alt={props.brandAlt}/>
                 <h1 className="brandTitle" >Malditos Goblins</h1>
             </nav>
+            <a className="logOutLink" onClick={logout} href="/">Log Out</a>
         </header>
     )
 }

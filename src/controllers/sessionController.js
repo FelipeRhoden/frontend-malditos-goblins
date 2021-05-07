@@ -26,3 +26,7 @@ export function login(name, password, callback, ...param){
     })
     .catch(err => console.log(`Error: ${err}`));
 }
+
+export function logout(){
+  localStorage.clear();
+}
