@@ -27,7 +27,7 @@ function Login(props){
             <form onSubmit={handleSubmit}>
                 <fieldset>
 
-                    <legend>Login</legend>
+                    <legend>Log In</legend>
 
                     <img className="logo" src={logo} alt="Logo"/>
 
