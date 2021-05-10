@@ -61,7 +61,7 @@ export default function Sheet(props){
                         key={element['id']}
                         className="equips"
                     >
-                        {element['description']}
+                        {`${element['amount']} ${element['description']}`}
                     </p>
                 )
             )
