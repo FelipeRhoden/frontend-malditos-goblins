@@ -1,6 +1,7 @@
 .sheet{
     height: auto !important;
     position: relative;
+    margin-bottom: 2em;
     transition: 0.5s;
 }
 

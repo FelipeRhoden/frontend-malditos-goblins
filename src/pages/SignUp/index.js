@@ -3,19 +3,26 @@ import { useHistory } from 'react-router-dom';
 import { signUp } from '../../controllers/usersController';
 
 import logo from '../../assets/logo.png'
+import Load from '../Load'
 import "./styles.css";
+
 
 function SignUp(props){
     
     const [name, handleChangeNome] = useState('');
     const [password, handleChangeSenha] = useState('');
+    const [load, changeLoad] = useState(false);
     const history = useHistory();
 
     function handleSubmit(event){
         event.preventDefault();
 
-        signUp(name, password, () => {
+        changeLoad(true);
+        signUp(name, password, (data) => {
+          if(data)
             history.push('/List');
+          else
+            changeLoad(false);
         });
     }
 
@@ -24,6 +31,8 @@ function SignUp(props){
     }
 
         return(
+          <div className="loginContainer">
+          {!(load) ?
             <form onSubmit={handleSubmit}>
                 <fieldset>
 
@@ -55,6 +64,10 @@ function SignUp(props){
                     <input className="button" type="button" value="Voltar" onClick={login}/>
                 </fieldset>
             </form>
+            :
+            <Load />
+          }
+          </div>
         );
 }
 

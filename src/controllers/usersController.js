@@ -27,5 +27,8 @@ export function signUp(name, password, callback, ...param){
         
         return callback(data, ...param)
     })
-    .catch(err => console.log(`Error: ${err}`));
+    .catch(err => {
+      console.log(`Error: ${err}`);
+      callback(null)
+    });
 }
